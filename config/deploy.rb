@@ -9,8 +9,8 @@ set :rails_env, "production"
 set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true, :port => 4321 }
 ssh_options[:user] = "hitfishking"
-ssh_options[:port] = 4321
-ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
+#ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
+ssh_options[:keys] = ["f:/aaa/id_rsa"]
 
 set :keep_releases, 5
 default_run_options[:pty] = true
@@ -32,10 +32,11 @@ server "115.28.43.56", :app, :web, :db, :primary => true
 # these http://github.com/rails/irs_process_scripts
 
 # If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+namespace :deploy do
+	 desc "Human readable description of task"
+   task :start do ; end
+   task :stop do ; end
+   task :restart, :roles => :app, :except => { :no_release => true } do
+     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+   end
+end

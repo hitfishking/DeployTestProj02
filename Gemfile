@@ -37,7 +37,8 @@ group :development do
 	gem 'capistrano','2.14.2'
 end
 
-gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
+#gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
+#gem 'net-ssh','2.8.0'
 #gem 'net-ssh','2.7.0'
 
 # Use ActiveModel has_secure_password
