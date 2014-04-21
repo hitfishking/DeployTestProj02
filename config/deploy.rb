@@ -1,3 +1,9 @@
+# adjust if you are using RVM, remove if you are not
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+require "rvm/capistrano"
+set :rvm_ruby_string, '1.9.3'
+set :rvm_type, :user
+
 set :application, "DeployTestingProject"
 set :repository,  "git@github.com:hitfishking/DeployTestProj02.git"
 set :deploy_to, "/opt/nginx/html/rails_apps/DeployTestProj02"
@@ -32,11 +38,11 @@ server "115.28.43.56", :app, :web, :db, :primary => true
 # these http://github.com/rails/irs_process_scripts
 
 # If you are using Passenger mod_rails uncomment this:
-namespace :deploy do
-	 desc "Human readable description of task"
-   task :start do ; end
-   task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-   end
-end
+#namespace :deploy do
+#	 desc "Human readable description of task"
+#   task :start do ; end
+#   task :stop do ; end
+#   task :restart, :roles => :app, :except => { :no_release => true } do
+#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+#   end
+#end
