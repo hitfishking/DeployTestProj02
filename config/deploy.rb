@@ -18,7 +18,7 @@ ssh_options[:user] = "hitfishking"
 #ssh_options[:keys] = [File.join(ENV["HOME"], ".ssh", "id_rsa")]
 ssh_options[:keys] = ["f:/aaa/id_rsa"]
 
-set :keep_releases, 5
+set :keep_releases, 4
 default_run_options[:pty] = true
 
 server "115.28.43.56", :app, :web, :db, :primary => true
