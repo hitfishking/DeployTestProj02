@@ -1,3 +1,4 @@
+# After delete the deploy branch, testing push again...
 #source 'https://rubygems.org'
 source 'http://ruby.taobao.org'
 
