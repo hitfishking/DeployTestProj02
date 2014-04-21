@@ -4,7 +4,9 @@ require "rvm/capistrano"
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :user
 
+set :user, "hitfishking"
 set :application, "DeployTestingProject"
+
 #set :repository,  "git@github.com:hitfishking/DeployTestProj02.git"
 set :repository,  "/home/#{user}/repositories/#{application}"
 set :local_repository, "ssh://#{user}@#{domain}/home/#{user}/repositories/#{application}"
@@ -12,7 +14,7 @@ set :local_repository, "ssh://#{user}@#{domain}/home/#{user}/repositories/#{appl
 set :deploy_to, "/opt/nginx/html/rails_apps/DeployTestProj02"
 set :scm, :git
 set :branch, "master"
-set :user, "hitfishking"
+#set :user, "hitfishking"
 set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy
