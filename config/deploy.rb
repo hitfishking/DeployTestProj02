@@ -5,7 +5,10 @@ set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :user
 
 set :application, "DeployTestingProject"
-set :repository,  "git@github.com:hitfishking/DeployTestProj02.git"
+#set :repository,  "git@github.com:hitfishking/DeployTestProj02.git"
+set :repository,  "/home/#{user}/repositories/#{application}"
+set :local_repository, "ssh://#{user}@#{domain}/home/#{user}/repositories/#{application}"
+
 set :deploy_to, "/opt/nginx/html/rails_apps/DeployTestProj02"
 set :scm, :git
 set :branch, "master"
