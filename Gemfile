@@ -17,7 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
+gem 'execjs'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -33,9 +34,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
+
 group :development do
 	gem 'capistrano','2.14.2'
 end
+
+gem 'rvm-capistrano'
 
 #gem 'net-ssh', '~> 2.8.1', :git => "https://github.com/net-ssh/net-ssh"
 #gem 'net-ssh','2.8.0'
